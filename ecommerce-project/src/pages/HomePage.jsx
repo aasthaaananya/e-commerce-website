@@ -22,9 +22,7 @@ export function HomePage({cart}) {
         
     return (
         <>
-            <Header cart={cart}></Header>
-             <title>Ecommerce project</title>
-
+            <Header cart={cart} />
 
             <div className="home-page">
                 <div className="products-grid">
@@ -33,7 +31,7 @@ export function HomePage({cart}) {
                             <div key={product.id} className="product-container">
                                 <div className="product-image-container">
                                     <img className="product-image"
-                                        src= {product.image} />
+                                        src={product.image?.startsWith('/') ? product.image : `/${product.image}`} />
                                 </div>
 
                                 <div className="product-name limit-text-to-2-lines">
@@ -70,7 +68,7 @@ export function HomePage({cart}) {
                                 <div className="product-spacer"></div>
 
                                 <div className="added-to-cart">
-                                    <img src="images/icons/checkmark.png" />
+                                    <img src="/images/icons/checkmark.png" />
                                     Added
                                 </div>
 
