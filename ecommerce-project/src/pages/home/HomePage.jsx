@@ -16,7 +16,7 @@ export function HomePage({ cart,loadCart }) {
         }
 
         getHomeData();
-    });
+    }, []);
 
 
 
